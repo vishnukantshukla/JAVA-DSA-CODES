@@ -1,0 +1,34 @@
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        
+    
+    Scanner sc=new Scanner(System.in);
+   int num=sc.nextInt();
+    while(num>0){
+        int M=sc.nextInt();
+        int N=sc.nextInt();
+        int Ayush=0;
+        int Harshit=0;
+        int count=1;
+        while(true){
+            Ayush=Ayush+count;
+            if(Ayush>M){
+                System.out.println("Harshit");
+                break;
+                
+            }
+            count++;
+                Harshit+=count;
+            if(Harshit>N){
+                System.out.println("Aayush");
+                break;
+            }
+            count++;
+           
+        }
+        num--;
+    }
+    
+}
+}
