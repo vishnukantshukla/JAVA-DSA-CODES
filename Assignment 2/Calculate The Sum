@@ -1,0 +1,35 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int arr[] = new int[num];
+        for (int j = 0; j < arr.length; j++) {
+            arr[j] = sc.nextInt();
+
+        }
+        int num_test = sc.nextInt();
+        for (int k = 1; k <= num_test; k++) {
+            int arr1[] = new int[num];
+            int X = sc.nextInt();
+            for (int l = 0; l < arr.length; l++) {
+                int j = l - X;
+                if (j < 0) {
+                    j = j + num;
+                }
+                arr1[l] = arr[l] + arr[j];
+            }
+            arr = arr1;
+
+        }
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum = sum + arr[i];
+        }
+        sum %= 1000000007;
+        System.out.println(sum);
+
+    }
+
+}
