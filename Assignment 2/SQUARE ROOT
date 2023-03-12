@@ -1,0 +1,15 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String args[]) {
+        // Your Code Here
+        Scanner sc = new Scanner(System.in);
+        int test = sc.nextInt();
+        for (int i = 0; i < test; i++) {
+            double num = sc.nextDouble();
+            double out = Math.sqrt(num);
+            double out1 = ((int) (out * 10000)) / 10000.0;
+            System.out.printf("%.4f%n", out1);
+        }
+    }
+}
