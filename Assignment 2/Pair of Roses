@@ -1,0 +1,55 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int test = sc.nextInt();
+
+        while(test>0){
+            int N = sc.nextInt();
+            int arr[] = new int[N];
+            for (int j = 0; j < arr.length; j++) {
+                arr[j] = sc.nextInt();
+            }
+            int price = sc.nextInt();
+             sort(arr);
+            int ans[] = rose_1(arr, price);
+           
+            System.out.println("Deepak should buy roses whose prices are "+ans[0]+" and "+ans[1]+".");
+            test--;
+        }
+
+    }
+    public static int[] sort(int arr[]) {
+        for (int i = 1; i < arr.length; i++) {
+            for (int j = 0; j < arr.length - i; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+
+                }
+            }
+
+        }
+        return arr;
+    }
+    public static int[] rose_1(int arr[], int b) {
+        int difference = Integer.MAX_VALUE;
+        int ans[] = new int[2];
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] + arr[j] == b) {
+                   // if (arr[j] - arr[i] < difference) {
+                        ans[0] = arr[i];
+                        ans[1] = arr[j];
+                    // }
+                }
+            }
+        }
+        return ans;
+
+    }
+
+    
+}
