@@ -1,0 +1,26 @@
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        long num=sc.nextLong();
+        long sum=0;
+        long mul=1;
+        while(num>0){
+            
+            long b=num%10;
+            if(b>=5 && num!=9){
+                sum=sum+(9-b)*mul;
+            }
+            else{
+                sum=sum+b*mul;
+            }
+            
+            num=num/10;
+            mul=mul*10;
+            
+        }
+        System.out.print(sum);
+
+    }
+}
+
