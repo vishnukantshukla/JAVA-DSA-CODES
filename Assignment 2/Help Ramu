@@ -1,0 +1,40 @@
+import java.util.*;
+
+public class Main{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        long test = sc.nextInt();
+        for (int h = 1; h <= test; h++) {
+            // int num = sc.nextInt();
+            int[] cost = new int[4];
+            for (int i = 0; i < cost.length; i++) {
+                cost[i] = sc.nextInt();
+
+            }
+            long rec = sc.nextInt();
+            long cabs = sc.nextInt();
+            int res1[] = new int[(int) rec];
+            int sum = 0;
+            int sum1 = 0;
+            int out;
+            for (int i = 0; i < res1.length; i++) {
+
+                res1[i] = sc.nextInt();
+                sum += Math.min(res1[i] * cost[0], cost[1]);
+
+            }
+            out = Math.min(sum, cost[2]);
+            int out1;
+            int cabs1[] = new int[(int) cabs];
+            for (int i = 0; i < cabs1.length; i++) {
+                cabs1[i] = sc.nextInt();
+                sum1 += Math.min(cabs1[i] * cost[0], cost[1]);
+            }
+            out1 = Math.min(sum1, cost[2]);
+            int out2 = out + out1;
+            int out3 = Math.min(out2, cost[3]);
+            System.out.println(out3);
+
+        }
+    }
+}
