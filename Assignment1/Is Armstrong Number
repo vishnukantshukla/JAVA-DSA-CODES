@@ -1,0 +1,33 @@
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+        Scanner sc=new Scanner(System.in);
+        int num=sc.nextInt();
+        int rem,result=0,temp;
+        temp=num;
+        int num1=num;
+        int count=0;
+         while(num>0){
+            int a=num%10;
+             count+=1;
+            num/=10;
+         }
+        while(temp!=0){
+             rem=temp%10;
+             result+=Math.pow(rem, count);
+             temp/=10;
+
+
+        }
+        
+        if(result ==num1){
+            System.out.print("true");
+        }
+        else{
+            System.out.print("false");
+        }
+    }
+}
+    
+
+
