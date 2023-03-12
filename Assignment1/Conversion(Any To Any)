@@ -1,0 +1,31 @@
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+        Scanner sc=new Scanner(System.in);
+        int sb=sc.nextInt();
+        int db=sc.nextInt();
+        int sn=sc.nextInt();
+        int mul=1;
+        int sum=0;
+            while(sn>0){
+            int rem=sn%10;
+            sum=sum+mul*rem;
+            sn=sn/10;
+            mul=mul*sb;
+
+
+        }
+        //System.out.println(sum);
+        int sum1=0;
+        int mul1=1;
+        while(sum>0){
+            int rem1=sum%db;
+            sum1=sum1+mul1*rem1;
+            sum=sum/db;
+            mul1=mul1*10;
+        
+        }
+        System.out.println(sum1);
+
+     }
+}
